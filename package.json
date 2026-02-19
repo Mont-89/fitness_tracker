@@ -1,0 +1,14 @@
+{
+  "name": "fitness_tracker",
+  "version": "1.0.0",
+  "description": "Elders Well-being Monitor System API",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
