@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elders Monitor</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <main class="layout">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Newlands Homes</p>
+          <h1>Elders Well-being Monitor</h1>
+        </div>
+        <p class="muted">Secure role-based care platform</p>
+      </header>
+
+      <section id="loginPanel" class="panel glass">
+        <div class="section-head">
+          <h2>Sign in to continue</h2>
+          <p>Administrator access and secure magic-link sign in.</p>
+        </div>
+
+        <div class="grid2">
+          <form id="adminLoginForm" class="card elevated">
+            <h3>Administrator Login</h3>
+            <p class="hint">Use your owner credentials.</p>
+            <label>Email</label>
+            <input name="email" placeholder="Admin email" required />
+            <label>Password</label>
+            <input name="password" type="password" placeholder="Password" required />
+            <button type="submit">Login as Admin</button>
+          </form>
+
+          <form id="magicLoginForm" class="card elevated">
+            <h3>User Magic Link Login</h3>
+            <p class="hint">Paste the token from your secure email link.</p>
+            <label>Magic Token</label>
+            <input name="token" placeholder="Paste magic token" required />
+            <button type="submit">Login with Link Token</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="appPanel" class="panel hidden">
+        <div class="section-head split">
+          <div>
+            <h2 id="welcome"></h2>
+            <p id="roleText" class="muted"></p>
+          </div>
+          <span class="badge">Authenticated Session</span>
+        </div>
+
+        <div id="adminSection" class="hidden stack-lg">
+          <article class="card">
+            <h3>Integration Settings</h3>
+            <p class="hint">Enter your admin and provider details.</p>
+            <form id="integrationForm" class="grid2 compact">
+              <input name="adminName" placeholder="Your full name" />
+              <input name="adminEmail" placeholder="Your admin login email" />
+              <input name="adminPhone" placeholder="Your phone number" />
+              <input name="emailApiUrl" placeholder="Email API URL" />
+              <input name="emailApiKey" placeholder="Email API Key" />
+              <input name="paymentGatewayUrl" placeholder="Payment Gateway URL" />
+              <input name="paymentGatewayApiKey" placeholder="Payment Gateway API Key" />
+              <button type="submit">Save Integration Details</button>
+            </form>
+            <pre id="integrationOutput"></pre>
+          </article>
+
+          <article class="card">
+            <h3>Create User Accounts</h3>
+            <p class="hint">Provision residents, staff, or family members.</p>
+            <form id="createUserForm" class="grid2 compact">
+              <input name="name" placeholder="Full name" required />
+              <input name="email" placeholder="Email" required />
+              <select name="role">
+                <option value="resident">Resident</option>
+                <option value="staff">Staff</option>
+                <option value="family_member">Family Member</option>
+              </select>
+              <input name="room" placeholder="Room (for resident)" />
+              <button type="submit">Provision User + Send Login Email</button>
+            </form>
+            <pre id="adminOutput"></pre>
+          </article>
+        </div>
+
+        <div id="residentSection" class="hidden stack-lg">
+          <article class="card">
+            <h3>Resident Dashboard</h3>
+            <div id="residentDetails"></div>
+          </article>
+
+          <article class="card">
+            <h3>Resident Actions</h3>
+            <div class="grid3">
+              <form id="payBillForm" class="compact">
+                <h4>Pay Bill</h4>
+                <input name="billId" placeholder="Bill ID" required />
+                <input name="amount" type="number" placeholder="Amount" required />
+                <input name="method" placeholder="Method e.g. card" required />
+                <button type="submit">Pay Bill</button>
+              </form>
+
+              <form id="activityForm" class="compact">
+                <h4>Choose Activity</h4>
+                <input name="name" placeholder="Activity (e.g. Chess)" required />
+                <button type="submit">Select Activity</button>
+              </form>
+
+              <form id="contactForm" class="compact">
+                <h4>Contact Family</h4>
+                <select name="channel">
+                  <option value="call">Call</option>
+                  <option value="sms">SMS</option>
+                  <option value="email">Email</option>
+                </select>
+                <input name="message" placeholder="Message to family" required />
+                <button type="submit">Send Message</button>
+              </form>
+            </div>
+            <pre id="residentOutput"></pre>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
