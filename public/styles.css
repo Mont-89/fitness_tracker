@@ -1,0 +1,279 @@
+:root {
+  --bg: #0f172a;
+  --bg-soft: #111c3a;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --primary: #22d3ee;
+  --card: #1e293b;
+  --border: #334155;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+.hero {
+  background: radial-gradient(circle at top right, #1d4ed8, var(--bg) 42%);
+  padding-bottom: 5rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 0;
+}
+
+.logo {
+  color: var(--text);
+  font-weight: 800;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: var(--text);
+}
+
+.hero-content {
+  padding: 4rem 0 2rem;
+}
+
+.eyebrow {
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  line-height: 1.1;
+}
+
+h1 span {
+  color: var(--primary);
+}
+
+.hero-text {
+  max-width: 760px;
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin-top: 1rem;
+}
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 1.5rem;
+}
+
+.btn {
+  border-radius: 999px;
+  padding: 0.65rem 1.2rem;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.btn.primary {
+  background: var(--primary);
+  color: #042f2e;
+}
+
+.btn.primary:hover {
+  background: #67e8f9;
+}
+
+.btn.secondary {
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.section h2 {
+  margin-top: 0;
+  font-size: 1.8rem;
+}
+
+.section p {
+  color: var(--muted);
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.info-grid {
+  margin-top: 1.2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.info-card,
+.project-card,
+.timeline-item {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.1rem;
+}
+
+.info-card h3,
+.project-card h3,
+.timeline-item h3 {
+  margin-top: 0;
+}
+
+.info-card ul,
+.project-card ul {
+  margin: 0.8rem 0 0;
+  padding-left: 1.2rem;
+  color: #cbd5e1;
+}
+
+.project-grid {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.subheading {
+  margin: 1.6rem 0 0.8rem;
+  font-size: 1.1rem;
+}
+
+.chip-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.chip-grid span {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  color: #cbd5e1;
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.92rem;
+}
+
+.timeline {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.timeline-item p {
+  margin: 0;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.contact-links a,
+.contact-links span {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--muted);
+  padding: 1.4rem 0;
+}
+
+@media (max-width: 780px) {
+  .nav-links {
+    display: none;
+  }
+
+  .section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.contact-form {
+  margin-top: 1.25rem;
+  max-width: 680px;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.contact-form label {
+  font-weight: 600;
+  color: #cbd5e1;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  background: var(--bg-soft);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 0.7rem 0.8rem;
+  font: inherit;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid #67e8f9;
+  outline-offset: 1px;
+}
+
+.contact-form .btn {
+  width: fit-content;
+  margin-top: 0.4rem;
+  border: 0;
+  cursor: pointer;
+}
+
+.form-note {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
